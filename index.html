@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Grievance Redressal System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Grievance Redressal System</h1>
+        <form id="grievanceForm">
+            <label for="sector">Select Sector:</label>
+            <select id="sector" name="sector">
+                <option value="police">Police</option>
+                <option value="fire">Fire Department</option>
+                <!-- Add more sectors as needed -->
+            </select>
+
+            <label for="photo">Capture Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+
+            <label for="message">Text Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+
+            <label for="voiceMessage">Voice Message:</label>
+            <input type="file" id="voiceMessage" name="voiceMessage" accept="audio/*">
+
+            <button type="button" onclick="submitGrievance()">Submit Grievance</button>
+        </form>
+
+        <div id="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
