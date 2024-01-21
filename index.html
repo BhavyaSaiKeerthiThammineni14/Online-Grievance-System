@@ -8,31 +8,36 @@
 </head>
 <body>
     <div class="container">
-        <h1>Online Grievance Redressal System</h1>
+        <h1 style="text-align: center; font-size: 28px;">Online Grievance Redressal System</h1>
         <form id="grievanceForm">
-            <label for="sector">Select Sector:</label>
+            <label for="sector" class="left-align-label"><b>Select Sector:</b></label>
             <select id="sector" name="sector">
                 <option value="police">Police</option>
                 <option value="fire">Fire Department</option>
-                
             </select>
-
-            
+           <style>
+        .form label{
+		display: inline-block;
+		text-align: right;
+		float: left;
+	}
+           </style>
+           
             <div class="photo-section">
-                <label for="photo">Capture Photo:</label>
+                <label for="photo" style="text-align: left; font-size: 16px;"><b>Capture Photo:</b></label>
                 <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
                 <button type="button" id="capturePhoto" class="photo-upload">Capture Photo</button>
                 <img id="capturedImage" alt="Captured Photo" style="display: none;">
             </div>
 
-            <label for="message">Text Message:</label>
+            <label for="message" style="text-align: left; font-size: 16px;"><b>Text Message:</b></label>
             <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
 
-            <label for="voiceMessage">Voice Message:</label>
+            <label for="voiceMessage" style="text-align: left; font-size: 16px;"><b>Voice Message:</b></label>
             <input type="file" id="voiceMessage" name="voiceMessage" accept="audio/*" style="display: none;">
-            <!--<button type="button" id="captureVoiceMessage" class="voice-upload">Capture Voice Message</button>-->
+            <button type="button" id="captureVoiceMessage" class="voice-upload">Capture Voice Message</button>
 
-        
+           
             <audio id="audioPlayer" controls style="display: none;"></audio>
 
             <button type="button" id="startRecording">Start Voice Recording</button>
