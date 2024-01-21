@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -7,11 +7,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: background-color 0.3s;
+}
+
+.border-button:hover {
+    border-width: 10px;
+    transition: border-width 0.3s;
 }
 
 .container {
-    max-width: 600px;
-    width: 80%;
+    max-width: 2000px;
+    width: 100%;
     margin: auto;
     padding: 30px;
     background-color: #fff;
@@ -19,24 +25,30 @@ body {
     border-radius: 10px;
     text-align: center;
     box-sizing: border-box;
+    transition: box-shadow 0.3s;
+}
+
+.container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    transition: color 0.3s;
+}
+
+h1:hover {
+    color: #4caf50;
 }
 
 form {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-}
-
-input, select, textarea {
+input,
+select,
+textarea {
     width: calc(100% - 20px);
     padding: 12px;
     margin-bottom: 20px;
@@ -44,14 +56,19 @@ input, select, textarea {
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #f8f8f8;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background-color 0.3s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     border-color: #4caf50;
+    background-color: #fff;
 }
 
-button {
+button,
+.photo-upload,
+.voice-upload {
     background-color: #4caf50;
     color: #fff;
     padding: 15px;
@@ -60,29 +77,22 @@ button {
     border-radius: 8px;
     width: calc(100% - 20px);
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     margin-bottom: 15px;
 }
 
-button:hover {
+button:hover,
+.photo-upload:hover,
+.voice-upload:hover {
     background-color: #45a049;
-}
-
-/* Animation for the recording button */
-@keyframes recordingAnimation {
-    0% { background-color: #4caf50; }
-    50% { background-color: #45a049; }
-    100% { background-color: #4caf50; }
-}
-
-button.recording {
-    animation: recordingAnimation 1s infinite;
+    transform: scale(1.05);
 }
 
 #feedback {
     margin-top: 20px;
     color: #4caf50;
     font-size: 18px;
+    transition: color 0.3s;
 }
 
 #audioPlayer {
@@ -91,31 +101,23 @@ button.recording {
     display: none;
 }
 
-/* Styling for the photo input */
-#photo {
-    display: none; /* Hide the default file input */
-}
-.photo-upload {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-/* Styling for the voice message input */
+.photo-upload,
 .voice-upload {
     background-color: #4caf50;
     color: #fff;
-    padding: 10px;
+    padding: 15px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
     font-size: 14px;
     margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.photo-upload:hover,
+.voice-upload:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
 .photo-section {
@@ -123,36 +125,14 @@ button.recording {
     margin-bottom: 20px;
 }
 
-#photo {
-    display: none;
-}
-
-.photo-upload {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
 #capturedImage {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
     display: none;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Styling for the voice message input */
-.voice-upload {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 20px;
+#capturedImage:hover {
+    transform: scale(1.5);
 }
