@@ -34,7 +34,7 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 20px; 
     transition: color 0.3s;
 }
 
@@ -43,16 +43,29 @@ h1:hover {
 }
 
 form {
-    margin-top: 50px;
+    margin-top: 30px; 
+}
+
+label,
+input,
+select,
+textarea {
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px; 
 }
 
 input,
 select,
 textarea {
-    width: calc(100% - 20px);
     padding: 12px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #f8f8f8;
@@ -79,6 +92,7 @@ button,
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
     margin-bottom: 15px;
+    margin-top: 10px; 
 }
 
 button:hover,
