@@ -1,11 +1,10 @@
-// Check if the browser supports MediaRecorder API
+
 if ('MediaRecorder' in window) {
     var mediaRecorder;
     var recordedChunks = [];
 
     function startVoiceRecording() {
-        clearPreviousRecording(); // Stop any ongoing recording before starting a new one
-
+        clearPreviousRecording(); 
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(function (stream) {
                 mediaRecorder = new MediaRecorder(stream);
@@ -25,7 +24,7 @@ if ('MediaRecorder' in window) {
                 mediaRecorder.start();
                 console.log('Voice recording started.');
 
-                // Add the "recording" class to the button for animation
+               
                 document.getElementById("startRecording").classList.add("recording");
             })
             .catch(function (error) {
@@ -38,7 +37,7 @@ if ('MediaRecorder' in window) {
             mediaRecorder.stop();
             console.log('Voice recording stopped.');
 
-            // Remove the "recording" class after stopping recording
+           
             document.getElementById("startRecording").classList.remove("recording");
         }
     }
@@ -73,43 +72,43 @@ if ('MediaRecorder' in window) {
     }
 
     function submitGrievance() {
-        // Fetch form data
+        
         var sector = document.getElementById("sector").value;
         var photo = document.getElementById("photo").value;
         var message = document.getElementById("message").value;
         var voiceMessage = document.getElementById("voiceMessage").value;
 
-        // Simple validation (you should add more validation)
+      
         if (!sector || !photo || (!message && !voiceMessage)) {
             alert("Please fill in all the required fields.");
             return;
         }
 
-        // Simulate submitting data to the server (you should implement server-side logic)
+       
         var feedbackDiv = document.getElementById("feedback");
         feedbackDiv.innerHTML = "Grievance submitted successfully. ";
         feedbackDiv.innerHTML += "You will receive updates on the status.";
 
-        // Clear form fields
+       
         document.getElementById("sector").value = "";
         document.getElementById("photo").value = "";
         document.getElementById("message").value = "";
         document.getElementById("voiceMessage").value = "";
 
-        clearPreviousRecording(); // Clear the recording after submitting the grievance
+        clearPreviousRecording(); 
     }
 
-    // HTML buttons
+   
     document.getElementById("startRecording").addEventListener("click", startVoiceRecording);
     document.getElementById("stopRecording").addEventListener("click", stopVoiceRecording);
     document.getElementById("clearRecording").addEventListener("click", clearPreviousRecording);
     document.getElementById("playVoiceMessage").addEventListener("click", playVoiceMessage);
 
-    // Function to handle photo capture
+    
     document.getElementById("capturePhoto").addEventListener("click", function () {
         document.getElementById("photo").click();
     });
-    // Display the captured image
+   
     document.getElementById("photo").addEventListener("change", function (event) {
         var fileInput = event.target;
         var capturedImage = document.getElementById("capturedImage");
