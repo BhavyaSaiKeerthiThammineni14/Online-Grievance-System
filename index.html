@@ -11,10 +11,15 @@
         <h1 style="text-align: center; font-size: 28px;">Online Grievance Redressal System</h1>
         <form id="grievanceForm">
             <label for="sector" class="left-align-label"><b>Select Sector:</b></label>
-            <select id="sector" name="sector" placeholder="Select Any Option:>
-                <option value="police">Police</option>
-                <option value="fire">Fire Department</option>
-            </select>
+    <select id="sector" name="sector">
+        <option value="" disabled selected hidden>Select Any Option</option>
+        <option value="police">Police</option>
+        <option value="fire">Fire Department</option>
+        <option value="Health">Health </option>
+        <option value="cyber">Public Safety and Law Enforcement</option>
+        <option value="Traffic">Traffic and Parking Violations</option>
+        <option value="consumer">Consumer Complaints</option>
+    </select>
            
             <div class="photo-section">
                 <label for="photo" style="text-align: left; font-size: 16px;"><b>Capture Photo:</b></label>
